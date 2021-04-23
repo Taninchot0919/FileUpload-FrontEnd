@@ -1,5 +1,5 @@
 <template>
-  <img :src="require('../assets/' + img)" class="mx-auto"/>
+  <img :src="require('../assets/' + img)" class="mx-auto" />
   <div class="home text-center">
     <form @submit.prevent>
       <input type="file" @change="uploadBeforeSubmit" /> <br />
@@ -30,6 +30,8 @@ export default {
       const fd = new FormData();
       fd.append("file", this.selectedFile, this.selectedFile.name);
       console.log(fd);
+
+      // #### Better If Using Axios ####
       // axios.post("http://localhost:9000/", fd).then(res => {
       //   console.log(res);
       // });
